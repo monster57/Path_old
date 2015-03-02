@@ -26,10 +26,6 @@ class Roots{
 	}
 
 	public static void main(String[] args) {
-		// System.out.println("the list is \t"+routes.get("banglore"));
-		// System.out.println("this is that is not known"+routes.constainsKey(banglore));
-		// System.out.println("is there any path available in between banglore and singapore");
-		// System.out.print("Ans:");
 		if(isPathAvailable("banglor" , "singapore"))
 			System.out.println("yes");
 		else

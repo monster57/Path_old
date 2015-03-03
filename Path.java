@@ -15,15 +15,17 @@ public class Path{
 		routes.put("singapore" , singapore);
 		routes.put("tokyo" , tokyo);
 	};
-	// public static boolean isCityPresent(String city){
-	//
-	// }
-	public static  boolean isPathAvailable(String source , String destination){
-		Set newSet = routes.keySet();
-		if(!newSet.contains(source) || !routes.get(source).contains(destination)){
-			return false;
+	public static boolean isCityPresent(String city){
+		Set<String> newSet = routes.keySet();
+		if(newSet.contains(city)) return true;
+		for(String ele:newSet){
+			List<String> places = routes.get(ele); 
+			if(places.contains(city)) return true;
 		}
-		return true;
+		return false;
+	}
+	public static  boolean isPathAvailable(String source , String destination){
+		return routes.get(source).contains(destination);
 	}
 
 }

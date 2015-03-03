@@ -11,4 +11,12 @@ public class PathTest {
 	public void Test_isPathAvailable_returns_false_for_banglore_to_tokyo(){
 		assertFalse(Path.isPathAvailable("banglore" , "tokyo"));
 	}
+	@Test
+	public void Test_isCityPresent_returns_true_for_singapore(){
+		assertTrue(Path.isCityPresent("singapore"));
+	}
+	@Test
+	public void Test_isCityPresent_returns_false_for_chennai(){
+		assertFalse(Path.isCityPresent("chennai"));
+	}
 }

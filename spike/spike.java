@@ -10,19 +10,22 @@ class Roots{
 		singapore.add("tokyo");
 		List <String> tokyo =  new ArrayList<String>();
 		tokyo.add("singapore");
-
 		routes.put("banglore" , banglore);
 		routes.put("singapore" , singapore);
 		routes.put("tokyo" , tokyo);
 	};
 
-	public static  boolean isPathAvailable(String source , String destination){
+	public static boolean isCityPresent(String city){
 		Set newSet = routes.keySet();
-		if(!newSet.contains(source) || !routes.get(source).contains(destination)){
-			System.out.println(newSet.contains("banglore"));
-			return false;
+		if(newSet.contains(city)) return true;
+		for(Object ele: newSet){
+			if(ele.contains(city))
+				return true;
 		}
-		return true;
+		return false;
+	}
+	public static  boolean isPathAvailable(String source , String destination){
+		return routes.get(source).contains(destination);
 	}
 
 	public static void main(String[] args) {

@@ -27,5 +27,19 @@ public class Path{
 	public static  boolean isPathAvailable(String source , String destination){
 		return routes.get(source).contains(destination);
 	}
+	public static void main(String[] args) {
+		String city1 = args[0];
+		String city2 = args[1];
+		if(!isCityPresent(city1)){
+			System.out.println("No city named "+city1+" in database");
+		}
+		if(!isCityPresent(city2)){
+			System.out.println("No city named "+city2+" in database");
+		}
+		if(isCityPresent(city1) && isCityPresent(city2)){
+			System.out.println(""+isPathAvailable(city1 , city2));
+		}
+
+	}
 
 }

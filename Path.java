@@ -15,6 +15,7 @@ public class Path{
 		routes.put("singapore" , singapore);
 		routes.put("tokyo" , tokyo);
 	};
+	
 	public static boolean isCityPresent(String city){
 		Set<String> newSet = routes.keySet();
 		if(newSet.contains(city)) return true;
@@ -24,9 +25,11 @@ public class Path{
 		}
 		return false;
 	}
+
 	public static  boolean isPathAvailable(String source , String destination){
 		return routes.get(source).contains(destination);
 	}
+
 	public static void main(String[] args) {
 		String city1 = args[0];
 		String city2 = args[1];

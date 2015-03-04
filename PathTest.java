@@ -30,6 +30,16 @@ public class PathTest {
 		assertTrue(newPath.isCityPresent("singapore"));
 	}
 	@Test
+	public void Test_giveRoutes_returns_routes_for_banglore_to_singapore(){
+		Path newPath = new Path();
+		assertEquals(newPath.giveRoutes("banglore", "singapore") , "banglore->singapore");
+	}
+	@Test
+	public void Test_giveRoutes_returns_routes_for_banglore_to_tokyo(){
+		Path newPath = new Path();
+		assertEquals(newPath.giveRoutes("banglore", "tokyo") , "banglore->singapore->seoul->beijing->tokyo");
+	}
+	@Test
 	public void Test_isCityPresent_returns_false_for_chennai(){
 		Path newPath = new Path();
 		assertFalse(newPath.isCityPresent("chennai"));

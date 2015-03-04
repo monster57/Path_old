@@ -30,7 +30,11 @@ public class Path{
 		database.put("tokyo" , tokyo);
 
 	};
-
+	public String giveRoutes(String source , String destination){
+		boolean createRoot = isPathAvailable(source , destination);
+		String path  = String.join("->",routes);
+		return path;
+	}
 	public  boolean isCityPresent(String city){
 		Set<String> newSet = database.keySet();
 		if(newSet.contains(city)) return true;
@@ -58,7 +62,7 @@ public class Path{
 		return newStart;
 	}
 
-	public   boolean isPathAvailable(String source , String destination){
+	public boolean isPathAvailable(String source , String destination){
 		List<String> startDestination = database.get(source); 
 		routes.add(source);
 		if(startDestination.contains(destination)){
@@ -80,7 +84,7 @@ public class Path{
 			System.out.println("No city named "+city2+" in database");
 		}
 		if(newPath.isCityPresent(city1) && newPath.isCityPresent(city2)){
-			System.out.println(""+newPath.isPathAvailable(city1 , city2));
+			System.out.println(""+newPath.giveRoutes(city1, city2));
 		}
 	}
 }
